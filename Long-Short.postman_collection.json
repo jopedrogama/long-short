@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "fd965ec8-ba65-4d43-8238-cba20e313d49",
+		"name": "Long-Short",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15466115"
+	},
+	"item": [
+		{
+			"name": "Emails",
+			"item": [
+				{
+					"name": "GetEmails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/email",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"João Pedro\",\r\n    \"email\": \"jopedrogama@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/email",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert With file",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"testasdfe@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/email",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"email"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stocks",
+			"item": [
+				{
+					"name": "List By Stock Code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/prices/list",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"prices",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert Stock",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stock\": \"tsla\",\r\n    \"minPrice\": 13.11,\r\n    \"maxPrice\": 20.57,\r\n    \"country\": \"USA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/prices",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"prices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Stock",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stock\": \"tsla\",\r\n    \"minPrice\": 13.11,\r\n    \"maxPrice\": 20.55,\r\n    \"country\": \"USA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/prices",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"prices"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -12,4 +12,6 @@ public class RecieverEmailDTO {
     @Email
     private String email;
 
+    private String name;
+
 }

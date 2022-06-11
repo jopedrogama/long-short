@@ -25,28 +25,25 @@ public class MailConstructor implements IMailConstructor {
     public MimeMessage constuctMime(MailModel mail) {
         MimeMessage mime = new JavaMailSenderImpl().createMimeMessage();
         List<String> listOfemails = emailService.getEmailList();
-        if (listOfemails.size() != 0) {
-            Address[] to = new Address[listOfemails.size()];
-            for (int i = 0; i < listOfemails.size(); i++) {
-                try {
-                    to[i] = new InternetAddress(listOfemails.get(i));
-                } catch (AddressException e) {
-                    e.printStackTrace();
-                }
-
-            }
-
+        Address[] to = new Address[listOfemails.size()];
+        for (int i = 0; i < listOfemails.size(); i++) {
             try {
-                mime.setFrom("jopedrogama@gmail.com");
-                mime.addRecipients(Message.RecipientType.TO, to);
-                mime.setSubject(mail.getSubject());
-                mime.setContent(mail.getBody(), "text/html; charset=utf-8");
-            } catch (MessagingException error) {
-                System.out.println(error);
+                to[i] = new InternetAddress(listOfemails.get(i));
+            } catch (AddressException e) {
+                e.printStackTrace();
             }
-            return mime;
+
         }
 
+        try {
+            mime.setFrom("jopedrogama@gmail.com");
+            mime.addRecipients(Message.RecipientType.TO, to);
+            mime.setSubject(mail.getSubject());
+            mime.setContent(mail.getBody(), "text/html; charset=utf-8");
+        } catch (MessagingException error) {
+            System.out.println(error);
+        }
+        return mime;
     }
 
 }

@@ -17,3 +17,6 @@
 *    Scheduler that runs every minute to check on Yahoo API if the target price has been achieved. If so, a email is send to every email registered on the database telling about the stock operations it is supposed to do.
 
 *   If a stock has already reached it's price, it will no longer be emailed again, until it goes back to the non desired price and go back to the target price. This way, the receiver won't keep getting emails about the same stock every minute.
+
+----
+Post Man file has been added to make it easier for testing
